@@ -6,6 +6,7 @@ A **Scalable REST API** with Authentication & Role-Based Access Control, built w
 
 ## 📋 Table of Contents
 
+- [Quick Start](#-quick-start)
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -18,6 +19,28 @@ A **Scalable REST API** with Authentication & Role-Based Access Control, built w
 - [Security Practices](#security-practices)
 - [Scalability Notes](#scalability-notes)
 - [Testing](#testing)
+
+---
+
+## ⚡ Quick Start
+
+```bash
+git clone https://github.com/Guhan0003/primetask-api.git
+cd primetask-api/backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+pip install -r requirements.txt
+copy .env.example .env       # Configure DB credentials
+python manage.py migrate
+python manage.py runserver
+```
+
+**Demo Credentials:**
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@example.com | admin123 |
+
+**Quick Links:** [Swagger](http://127.0.0.1:8000/swagger/) · [API](http://127.0.0.1:8000/api/v1/) · [Frontend](frontend/index.html)
 
 ---
 
