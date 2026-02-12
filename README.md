@@ -4,6 +4,16 @@
 
 A **Scalable REST API** with Authentication & Role-Based Access Control, built with Django REST Framework.
 
+---
+
+## 📘 Technical Documentation
+
+Detailed architecture and implementation documentation is available here:
+
+👉 [docs/TECHNICAL_DOCUMENTATION.md](docs/TECHNICAL_DOCUMENTATION.md)
+
+---
+
 ## 📋 Table of Contents
 
 - [Quick Start](#-quick-start)
