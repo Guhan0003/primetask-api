@@ -536,3 +536,4 @@ Created as part of the Backend Developer (Intern) assignment for Primetrade.ai.
 - Django REST Framework documentation
 - SimpleJWT for JWT authentication
 - Primetrade.ai for the opportunity
+ 
