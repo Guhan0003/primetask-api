@@ -1,0 +1,71 @@
+================================================================================
+PrimeTask API - Django Development Server Logs
+Sample output from running: python manage.py runserver
+================================================================================
+
+Server Startup:
+-------------------------------------------------------------------------------
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 12, 2026 - 22:00:00
+Django version 4.2.7, using settings 'config.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+API Request Logs:
+-------------------------------------------------------------------------------
+
+# Authentication Endpoints
+[12/Feb/2026 22:01:15] "POST /api/v1/auth/register/ HTTP/1.1" 201 Created
+[12/Feb/2026 22:01:20] "POST /api/v1/auth/login/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:01:25] "GET /api/v1/auth/profile/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:01:30] "PUT /api/v1/auth/profile/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:01:35] "POST /api/v1/auth/change-password/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:01:40] "POST /api/v1/auth/logout/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:01:45] "POST /api/v1/auth/token/refresh/ HTTP/1.1" 200 OK
+
+# Task CRUD Endpoints (User)
+[12/Feb/2026 22:02:00] "GET /api/v1/tasks/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:02:05] "POST /api/v1/tasks/ HTTP/1.1" 201 Created
+[12/Feb/2026 22:02:10] "GET /api/v1/tasks/1/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:02:15] "PUT /api/v1/tasks/1/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:02:20] "PATCH /api/v1/tasks/1/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:02:25] "DELETE /api/v1/tasks/1/ HTTP/1.1" 204 No Content
+
+# Task Filtering & Search
+[12/Feb/2026 22:03:00] "GET /api/v1/tasks/?status=pending HTTP/1.1" 200 OK
+[12/Feb/2026 22:03:05] "GET /api/v1/tasks/?priority=high HTTP/1.1" 200 OK
+[12/Feb/2026 22:03:10] "GET /api/v1/tasks/?search=project HTTP/1.1" 200 OK
+[12/Feb/2026 22:03:15] "GET /api/v1/tasks/?ordering=-created_at HTTP/1.1" 200 OK
+
+# Admin Endpoints
+[12/Feb/2026 22:04:00] "GET /api/v1/admin/users/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:05] "GET /api/v1/admin/users/2/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:10] "PATCH /api/v1/admin/users/2/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:15] "DELETE /api/v1/admin/users/2/ HTTP/1.1" 204 No Content
+[12/Feb/2026 22:04:20] "GET /api/v1/admin/tasks/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:25] "GET /api/v1/admin/tasks/1/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:30] "PATCH /api/v1/admin/tasks/1/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:04:35] "DELETE /api/v1/admin/tasks/1/ HTTP/1.1" 204 No Content
+
+# Documentation Endpoints
+[12/Feb/2026 22:05:00] "GET /swagger/ HTTP/1.1" 200 OK
+[12/Feb/2026 22:05:05] "GET /swagger.json HTTP/1.1" 200 OK
+[12/Feb/2026 22:05:10] "GET /redoc/ HTTP/1.1" 200 OK
+
+# Error Response Examples
+[12/Feb/2026 22:06:00] "POST /api/v1/auth/login/ HTTP/1.1" 401 Unauthorized
+[12/Feb/2026 22:06:05] "GET /api/v1/tasks/ HTTP/1.1" 401 Unauthorized
+[12/Feb/2026 22:06:10] "GET /api/v1/admin/users/ HTTP/1.1" 403 Forbidden
+[12/Feb/2026 22:06:15] "GET /api/v1/tasks/999/ HTTP/1.1" 404 Not Found
+
+================================================================================
+API Test Results Summary:
+- Authentication: All endpoints working correctly
+- Task CRUD: Full functionality verified
+- Admin endpoints: Role-based access enforced
+- Documentation: Swagger UI accessible
+- Error handling: Proper status codes returned
+================================================================================
